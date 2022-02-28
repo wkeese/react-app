@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Table from './Table';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Table rows={ [
+        {name: "Bill", age: 54},
+        {name: "Sakura", age: 40},
+        {name: "Kenta", age: 8}
+    ] } />
   </React.StrictMode>,
   document.getElementById('root')
 );
