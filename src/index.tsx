@@ -1,20 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Table from './Table';
-import reportWebVitals from './reportWebVitals';
+import TableAsClass from './TableAsClass';
 
 ReactDOM.render(
   <React.StrictMode>
+    <h1>React table using functions</h1>
     <Table rows={ [
         {name: "Bill", age: 54},
         {name: "Sakura", age: 40},
         {name: "Kenta", age: 8}
     ] } />
+
+      <h1>React table using classes</h1>
+      <TableAsClass rows={ [
+          {name: "Bill", age: 54},
+          {name: "Sakura", age: 40},
+          {name: "Kenta", age: 8}
+      ] } />
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

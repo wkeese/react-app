@@ -1,11 +1,7 @@
 import React from 'react';
+import RowData from "./RowData";
 
-export interface RowData {
-  name: string
-  age: number
-}
-
-export function Row ({name, age}: RowData) {
+export default function Row ({name, age}: RowData) {
   return (
       <tr>
         <td>{name}</td>

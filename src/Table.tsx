@@ -1,5 +1,6 @@
 import React from 'react';
-import {Row, RowData} from "./Row";
+import Row from "./Row";
+import RowData from "./RowData";
 
 export default function Table (props: { rows: RowData[] }) {
   return (
