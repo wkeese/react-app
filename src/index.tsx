@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Button from './Button';
 import Table from './Table';
 import TableAsClass from './TableAsClass';
 import RowData from "./RowData";
@@ -20,6 +21,10 @@ function render() {
             <TableAsClass rows={ rows } />
 
             <button onClick={ageAndRerender}>Increase age.</button>
+
+            <h1>Buttons with state</h1>
+            <Button></Button>
+            <Button></Button>
         </React.StrictMode>,
         document.getElementById('root')
     );
