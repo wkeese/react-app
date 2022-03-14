@@ -1,27 +1,19 @@
 // This is to test hooking up a React component to Redux.
 
 import React from 'react';
-import store from "./redux";
+import { useAppDispatch, useAppSelector } from './hooks';
 
-export default class GlobalButton extends React.Component {
-     constructor (props: any) {
-        super(props);
-        store.subscribe(() => {
-            console.log(this, "got update");
-            this.forceUpdate();
-        })
-    }
+// Use functions rather than classes for path of least resistance.
+// If I wanted to do a class I think I need to follow https://react-redux.js.org/tutorials/connect,
+// but returning a function is the recommended way.
 
-    onClick () {
-        store.dispatch({ type: 'counter/increment' })
-    }
+export default function GlobalButton () {
+    const clicks = useAppSelector(state => state.counter.value);
+    const dispatch = useAppDispatch();
 
-    render() {
-        const clicks = store.getState().counter.value;
-        return (
-            <button onClick={this.onClick.bind(this)}>
-                {clicks} global clicks
-            </button>
-        );
-    }
+    return (
+        <button onClick={ () => dispatch({ type: 'counter/increment' }) }>
+            {clicks} global clicks
+        </button>
+    );
 }

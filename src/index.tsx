@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
 import Button from './Button';
 import GlobalButton from './GlobalButton';
 import Table from './Table';
 import TableAsClass from './TableAsClass';
 import RowData from "./RowData";
+import { store } from "./store";
 
 const rows: RowData[] = [
     {name: "Bill", age: 54},
@@ -14,23 +16,25 @@ const rows: RowData[] = [
 
 function render() {
     ReactDOM.render(
-        <React.StrictMode>
-            <h1>React table using functions</h1>
-            <Table rows={ rows } />
+        <Provider store={store}>
+            <React.StrictMode>
+                <h1>React table using functions</h1>
+                <Table rows={ rows } />
 
-            <h1>React table using classes</h1>
-            <TableAsClass rows={ rows } />
+                <h1>React table using classes</h1>
+                <TableAsClass rows={ rows } />
 
-            <button onClick={ageAndRerender}>Increase age.</button>
+                <button onClick={ageAndRerender}>Increase age.</button>
 
-            <h1>Buttons with state</h1>
-            <Button/>
-            <Button/>
+                <h1>Buttons with state</h1>
+                <Button/>
+                <Button/>
 
-            <h1>Buttons with global state in redux</h1>
-            <GlobalButton/>
-            <GlobalButton/>
-        </React.StrictMode>,
+                <h1>Buttons with global state in redux</h1>
+                <GlobalButton/>
+                <GlobalButton/>
+            </React.StrictMode>
+        </Provider>,
         document.getElementById('root')
     );
 }
