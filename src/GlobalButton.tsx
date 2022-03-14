@@ -17,7 +17,7 @@ export default class GlobalButton extends React.Component {
     }
 
     render() {
-        const clicks = store.getState().value;
+        const clicks = store.getState().counter.value;
         return (
             <button onClick={this.onClick.bind(this)}>
                 {clicks} global clicks
