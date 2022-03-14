@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Button from './Button';
+import GlobalButton from './GlobalButton';
 import Table from './Table';
 import TableAsClass from './TableAsClass';
 import RowData from "./RowData";
@@ -23,8 +24,12 @@ function render() {
             <button onClick={ageAndRerender}>Increase age.</button>
 
             <h1>Buttons with state</h1>
-            <Button></Button>
-            <Button></Button>
+            <Button/>
+            <Button/>
+
+            <h1>Buttons with global state in redux</h1>
+            <GlobalButton/>
+            <GlobalButton/>
         </React.StrictMode>,
         document.getElementById('root')
     );
