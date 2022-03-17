@@ -1,20 +1,15 @@
-import React from 'react';
+// Button functional component.
 
-export default class Button extends React.Component {
-    state = {
-        clicks: 0
-    }
+import React, { useState } from 'react';
 
-    onClick () {
-        this.setState({ clicks: this.state.clicks + 1 });
-    }
+export default function Button () {
+    console.log("render button");
 
-    render() {
-        const { clicks } = this.state;
-        return (
-            <button onClick={this.onClick.bind(this)}>
-                clicked {clicks} times
-            </button>
-        );
-    }
+    const [clicks, setClicks] = useState(0);
+
+    return (
+        <button onClick={() => setClicks(clicks + 1)}>
+            function button, clicked {clicks} times
+        </button>
+    );
 }

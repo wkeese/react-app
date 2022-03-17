@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from './hooks';
 // If I wanted to do a class I think I need to follow https://react-redux.js.org/tutorials/connect,
 // but returning a function is the recommended way.
 
-export default function GlobalButton () {
+export default function ReduxButton () {
     const clicks = useAppSelector(state => state.counter.value);
     const dispatch = useAppDispatch();
 

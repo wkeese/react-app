@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import Button from './Button';
-import GlobalButton from './GlobalButton';
+import ButtonAsClass from './ButtonAsClass';
+import ReduxButton from './ReduxButton';
 import Table from './Table';
 import TableAsClass from './TableAsClass';
 import RowData from "./RowData";
@@ -29,10 +30,12 @@ function render() {
                 <h1>Buttons with state</h1>
                 <Button/>
                 <Button/>
+                <ButtonAsClass/>
+                <ButtonAsClass/>
 
                 <h1>Buttons with global state in redux</h1>
-                <GlobalButton/>
-                <GlobalButton/>
+                <ReduxButton/>
+                <ReduxButton/>
             </React.StrictMode>
         </Provider>,
         document.getElementById('root')
