@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import Button from './Button';
 import ButtonAsClass from './ButtonAsClass';
+import Clock from './Clock';
 import ReduxButton from './ReduxButton';
 import Table from './Table';
 import TableAsClass from './TableAsClass';
@@ -36,6 +37,9 @@ function render() {
                 <h1>Buttons with global state in redux</h1>
                 <ReduxButton/>
                 <ReduxButton/>
+
+                <h1>Test of useEffect() for async updates of state</h1>
+                <Clock/>
             </React.StrictMode>
         </Provider>,
         document.getElementById('root')
